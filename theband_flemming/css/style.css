@@ -1,0 +1,171 @@
+* {
+    /* Elementers border og padding tages af deres højde og bredde. */
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    margin: 0;
+}
+img{
+    /* Bevar proportioner på billede. */
+    max-width: 100%;
+    object-fit: contain; 
+}
+
+/* TEXT OG FONT */
+h1 {
+    font-size: 48px;
+    margin: 0;
+}
+h2 {
+    font-size: 36px;
+}
+p {
+    line-height: 1.5;
+}
+/* TEXT OG FONT slut*/
+
+/* LAYOUT */
+header {
+    background-image: url("../img/banner.jpg");
+    height: 240px;
+}
+header nav {
+    max-width: 1184px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+main {
+    max-width: 1184px;
+    margin: 0 auto;
+    padding: 48px 0;
+}
+footer {
+    height: 80px;
+    background-image: url("../img/banner_footer.jpg");
+}
+footer div {
+    /* Social media ikoner placeres.½ */
+    max-width: 1184px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* NAVIGATION */
+nav ul {
+    /* Topmenuen placeres. */
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+}
+nav img {
+    /* Logo får lidt margin. */
+    margin: 20px 0;
+}
+nav a {
+    font-size: 20px;
+    text-decoration: none;
+}
+nav li a {
+    margin-left: 50px;
+    color: black;
+}
+nav li a:hover {
+    /* Menu-punkter musen er over gøres røde og understreges. */
+    color: red;
+    text-decoration: underline;
+}
+/* NAVIGATION slut */
+
+/* MAIN */
+.ill-article {
+    /* Selve artiklens tekst og billeder får lov at stå ved siden af hinanden. */
+    display: flex;
+    justify-content: space-between;
+}
+.ill-article section {
+    /* Teksten får de 40% til venstre. */
+    width: 40%;
+    padding-left: 10px;
+}
+.ill-article figure {
+    /* Billederne får de 58% til højre, og får lov at fordele sig som de vil. */
+    width: 58%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.ill-article figure img {
+    /* Plads mellem billeder der står over hinanden. */
+    margin-bottom: 15px;
+}
+main ul{
+    /* Menuen gøres uden prikker og skriftens størrelse sættes. */
+    list-style-type: none;
+    font-size: 18px;
+    line-height: 1.5;
+}
+/* MAIN slut */
+
+/* FOOTER */
+footer img {
+    /* Der gives lidt afstand mellem ikonerne. */
+    margin-left: 32px;
+}
+.footernav{
+    /* Ikonerne spredes ikke over to linjer. */
+    max-width: 100%;
+    display: flex;
+    flex-wrap: nowrap;   
+}
+/* FOOTER slut */
+
+/* MOBILVISNING */
+@media screen and (max-width: 799px){
+   .ill-article{
+       /* Først tekst, så billeder. */
+       display: block;
+   } 
+   .ill-article figure{
+       /* Billeder kommer nedad, et ad gangen. */
+       flex-wrap: nowrap;
+       flex-direction: column;
+       width: 100%;
+   }
+   .ill-article section{
+       /* Teksten placeres pænt */
+       width: 100%;
+       padding-left: 10px;
+       padding-right: 10px;
+   }
+   header nav ul li a{
+       margin-left: 10px;
+   }
+   nav ul{
+       justify-content:flex-start;
+   }
+   footer{
+       /* Højden på footer øges lidt, så baggrunden kommer med når der bruges to linjer. */
+       height: 300px;
+   }
+   footer div{
+       /* Social media-ikoner fordeles på to linjer, når bredden er lille. */
+       width: 480px;
+       flex-wrap: wrap;
+   }
+   main ul{
+       /* Skrifstørrelse sættes lidt ned, så linjer ikke deles så ofte. */
+       font-size: 16px;
+   }
+}
+/* MOBILVISNING slut */
